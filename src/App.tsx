@@ -23,7 +23,11 @@ import {
   Zap,
   Award,
   MapPin,
-  Newspaper
+  Newspaper,
+  Facebook,
+  Twitter,
+  Instagram,
+  Linkedin
 } from 'lucide-react';
 
 const subsidiaries = [
@@ -32,7 +36,7 @@ const subsidiaries = [
     url: "https://nugabestwestafrica.com",
     description: "Leading provider of thermal massage beds and wellness solutions across West Africa.",
     icon: Heart,
-    color: "bg-emerald-500",
+    color: "bg-brand",
     category: "Wellness"
   },
   {
@@ -40,7 +44,7 @@ const subsidiaries = [
     url: "https://www.nugahospital.ng",
     description: "State-of-the-art medical facility providing comprehensive healthcare services.",
     icon: Stethoscope,
-    color: "bg-blue-500",
+    color: "bg-brand",
     category: "Healthcare"
   },
   {
@@ -48,7 +52,7 @@ const subsidiaries = [
     url: "https://www.nugapay.com",
     description: "Innovative fintech solutions for seamless digital payments and financial management.",
     icon: CreditCard,
-    color: "bg-indigo-500",
+    color: "bg-brand",
     category: "Fintech"
   },
   {
@@ -56,7 +60,7 @@ const subsidiaries = [
     url: "https://nugabestproperties.com",
     description: "Premium real estate development and property management services.",
     icon: Building2,
-    color: "bg-amber-500",
+    color: "bg-brand",
     category: "Real Estate"
   },
   {
@@ -64,7 +68,7 @@ const subsidiaries = [
     url: "https://chifyrehab.vercel.app",
     description: "Specialized rehabilitation and physiotherapy services for holistic recovery.",
     icon: Activity,
-    color: "bg-rose-500",
+    color: "bg-brand",
     category: "Rehabilitation"
   }
 ];
@@ -91,7 +95,7 @@ const Navbar = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200 py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/logo.png" alt="Nuga Group Logo" className="w-10 h-10 object-contain" />
+          <img src="/logo.svg" alt="Nuga Group Logo" className="w-10 h-10 object-contain" />
           <span className={`font-bold text-xl tracking-tight ${scrolled ? 'text-zinc-900' : 'text-zinc-900'}`}>
             NUGA GROUP
           </span>
@@ -129,7 +133,7 @@ const Navbar = () => {
                   key={item} 
                   href={`#${item.toLowerCase()}`} 
                   onClick={() => setIsOpen(false)} 
-                  className="text-4xl font-bold text-zinc-900 hover:text-emerald-600 transition-colors"
+                  className="text-4xl font-bold text-zinc-900 hover:text-brand transition-colors"
                 >
                   {item}
                 </motion.a>
@@ -198,19 +202,19 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="max-w-3xl"
         >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 backdrop-blur-md text-emerald-400 text-xs font-bold uppercase tracking-wider mb-6 border border-emerald-500/30">
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/20 backdrop-blur-md text-brand-light text-xs font-bold uppercase tracking-wider mb-6 border border-brand/30">
             <ShieldCheck size={14} />
             Established Excellence
           </div>
           <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
             Innovating for a <br />
-            <span className="text-emerald-400">Better Tomorrow.</span>
+            <span className="text-brand-light">Better Tomorrow.</span>
           </h1>
           <p className="text-lg md:text-xl text-zinc-200 mb-8 leading-relaxed max-w-xl">
             Nuga Group is a diversified conglomerate dedicated to improving lives through healthcare, financial technology, real estate, and global wellness solutions.
           </p>
           <div className="flex flex-wrap gap-4">
-            <a href="#subsidiaries" className="bg-emerald-500 text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-emerald-600 transition-all shadow-lg shadow-emerald-500/20">
+            <a href="#subsidiaries" className="bg-brand text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-brand-dark transition-all shadow-lg shadow-brand/20">
               Explore Our Group <ArrowRight size={18} />
             </a>
             <a href="#about" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
@@ -226,7 +230,7 @@ const Hero = () => {
           <button 
             key={i}
             onClick={() => setCurrentImage(i)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${currentImage === i ? 'w-8 bg-emerald-500' : 'w-2 bg-white/30'}`}
+            className={`h-1.5 rounded-full transition-all duration-500 ${currentImage === i ? 'w-8 bg-brand' : 'w-2 bg-white/30'}`}
           />
         ))}
       </div>
@@ -243,7 +247,7 @@ const SubsidiaryCard = ({ sub, index }: { sub: typeof subsidiaries[0], index: nu
       transition={{ delay: index * 0.1 }}
       className="group bg-white border border-zinc-100 p-8 rounded-3xl hover:shadow-xl hover:border-zinc-200 transition-all duration-300 flex flex-col h-full"
     >
-      <div className={`w-14 h-14 ${sub.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-current/20`}>
+      <div className={`w-14 h-14 ${sub.color} rounded-2xl flex items-center justify-center text-white mb-6 shadow-lg shadow-brand/10`}>
         <sub.icon size={28} />
       </div>
       <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">{sub.category}</div>
@@ -342,25 +346,25 @@ const Values = () => {
       title: "Integrity",
       description: "We uphold the highest standards of honesty and ethical behavior in all our dealings.",
       icon: ShieldCheck,
-      color: "text-emerald-500"
+      color: "text-brand"
     },
     {
       title: "Innovation",
       description: "Continuously pushing boundaries to find better solutions for global challenges.",
       icon: Zap,
-      color: "text-amber-500"
+      color: "text-brand"
     },
     {
       title: "Service",
       description: "Dedicated to serving humanity through care, compassion, and excellence.",
       icon: Heart,
-      color: "text-rose-500"
+      color: "text-brand"
     },
     {
       title: "Excellence",
       description: "Striving for the best in everything we do, across all our subsidiaries.",
       icon: Award,
-      color: "text-blue-500"
+      color: "text-brand"
     }
   ];
 
@@ -373,8 +377,8 @@ const Values = () => {
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
           {values.map((value, i) => (
-            <div key={i} className="p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-zinc-200 transition-all">
-              <value.icon className={`w-10 h-10 ${value.color} mb-6`} />
+            <div key={i} className="p-8 rounded-3xl bg-zinc-50 border border-zinc-100 hover:border-brand/20 transition-all group">
+              <value.icon className={`w-10 h-10 ${value.color} mb-6 group-hover:scale-110 transition-transform`} />
               <h3 className="text-xl font-bold text-zinc-900 mb-3">{value.title}</h3>
               <p className="text-zinc-500 text-sm leading-relaxed">{value.description}</p>
             </div>
@@ -406,7 +410,7 @@ const Leadership = () => {
             </div>
           </div>
           <div>
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-100 text-blue-700 text-xs font-bold uppercase tracking-wider mb-6">
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/10 text-brand text-xs font-bold uppercase tracking-wider mb-6">
               <Target size={14} />
               Our Leadership
             </div>
@@ -454,7 +458,7 @@ const GlobalPresence = () => {
           </div>
           <div className="flex gap-4">
             <div className="flex items-center gap-2 text-sm font-medium text-zinc-900">
-              <div className="w-3 h-3 bg-emerald-500 rounded-full" /> Active Hubs
+              <div className="w-3 h-3 bg-brand rounded-full" /> Active Hubs
             </div>
             <div className="flex items-center gap-2 text-sm font-medium text-zinc-900">
               <div className="w-3 h-3 bg-zinc-200 rounded-full" /> Future Expansion
@@ -474,7 +478,7 @@ const GlobalPresence = () => {
           <div className="relative z-10 grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {locations.map((loc, i) => (
               <div key={i} className="bg-white/10 backdrop-blur-md border border-white/10 p-8 rounded-3xl">
-                <MapPin className="text-emerald-400 mb-4" size={24} />
+                <MapPin className="text-brand-light mb-4" size={24} />
                 <h3 className="text-xl font-bold text-white mb-2">{loc.name}</h3>
                 <p className="text-zinc-400 text-sm">{loc.status}</p>
               </div>
@@ -538,11 +542,11 @@ const News = () => {
                 />
               </div>
               <div className="flex items-center gap-3 mb-3">
-                <span className="text-xs font-bold text-emerald-600 uppercase tracking-widest">{article.category}</span>
+                <span className="text-xs font-bold text-brand uppercase tracking-widest">{article.category}</span>
                 <span className="text-zinc-300">•</span>
                 <span className="text-xs text-zinc-400">{article.date}</span>
               </div>
-              <h3 className="text-xl font-bold text-zinc-900 group-hover:text-emerald-600 transition-colors">{article.title}</h3>
+              <h3 className="text-xl font-bold text-zinc-900 group-hover:text-brand transition-colors">{article.title}</h3>
             </div>
           ))}
         </div>
@@ -564,7 +568,7 @@ const Contact = () => {
             
             <div className="space-y-8">
               <div className="flex gap-6">
-                <div className="w-12 h-12 bg-emerald-100 rounded-2xl flex items-center justify-center text-emerald-600 shrink-0">
+                <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand shrink-0">
                   <MapPin size={24} />
                 </div>
                 <div>
@@ -573,7 +577,7 @@ const Contact = () => {
                 </div>
               </div>
               <div className="flex gap-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-2xl flex items-center justify-center text-blue-600 shrink-0">
+                <div className="w-12 h-12 bg-brand/10 rounded-2xl flex items-center justify-center text-brand shrink-0">
                   <Globe size={24} />
                 </div>
                 <div>
@@ -593,7 +597,7 @@ const Contact = () => {
                   <input 
                     type="text" 
                     placeholder="John Doe"
-                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all"
                   />
                 </div>
                 <div>
@@ -601,13 +605,13 @@ const Contact = () => {
                   <input 
                     type="email" 
                     placeholder="john@example.com"
-                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all"
+                    className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all"
                   />
                 </div>
               </div>
               <div>
                 <label className="block text-sm font-bold text-zinc-900 mb-2">Subject</label>
-                <select className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all">
+                <select className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all">
                   <option>General Inquiry</option>
                   <option>Partnership Proposal</option>
                   <option>Healthcare Services</option>
@@ -620,7 +624,7 @@ const Contact = () => {
                 <textarea 
                   rows={4}
                   placeholder="How can we help you?"
-                  className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all resize-none"
+                  className="w-full bg-white border border-zinc-200 rounded-xl px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand/20 focus:border-brand transition-all resize-none"
                 ></textarea>
               </div>
               <button className="w-full bg-zinc-900 text-white py-4 rounded-xl font-bold hover:bg-zinc-800 transition-all shadow-lg shadow-zinc-900/10">
@@ -641,7 +645,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <img src="/logo.png" alt="Nuga Group Logo" className="w-8 h-8 object-contain" />
+              <img src="/logo.svg" alt="Nuga Group Logo" className="w-8 h-8 object-contain" />
               <span className="font-bold text-lg tracking-tight text-zinc-900">
                 NUGA GROUP
               </span>
@@ -649,6 +653,20 @@ const Footer = () => {
             <p className="text-zinc-500 text-sm leading-relaxed mb-6">
               The global hub for excellence in healthcare, wellness, and technology. Improving lives through innovation.
             </p>
+            <div className="flex gap-4">
+              <a href="https://facebook.com/nugagroup" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 hover:bg-brand hover:text-white hover:border-brand transition-all">
+                <Facebook size={18} />
+              </a>
+              <a href="https://twitter.com/nugagroup" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 hover:bg-brand hover:text-white hover:border-brand transition-all">
+                <Twitter size={18} />
+              </a>
+              <a href="https://instagram.com/nugagroup" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 hover:bg-brand hover:text-white hover:border-brand transition-all">
+                <Instagram size={18} />
+              </a>
+              <a href="https://linkedin.com/company/nugagroup" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-white border border-zinc-200 rounded-full flex items-center justify-center text-zinc-600 hover:bg-brand hover:text-white hover:border-brand transition-all">
+                <Linkedin size={18} />
+              </a>
+            </div>
           </div>
 
           <div>
@@ -679,9 +697,9 @@ const Footer = () => {
               <input 
                 type="email" 
                 placeholder="Enter email" 
-                className="bg-white border border-zinc-200 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-zinc-900/10"
+                className="bg-white border border-zinc-200 rounded-lg px-4 py-2 text-sm w-full focus:outline-none focus:ring-2 focus:ring-brand/10 focus:border-brand"
               />
-              <button className="bg-zinc-900 text-white px-4 py-2 rounded-lg text-sm font-medium">
+              <button className="bg-brand text-white px-4 py-2 rounded-lg text-sm font-medium hover:bg-brand-dark transition-all">
                 Join
               </button>
             </div>
@@ -735,20 +753,20 @@ export default function App() {
       <News />
       <Contact />
       
-      <section className="py-24 bg-emerald-600 text-white overflow-hidden relative">
+      <section className="py-24 bg-brand text-white overflow-hidden relative">
         <div className="absolute top-0 right-0 w-64 h-64 bg-white/10 rounded-full -mr-32 -mt-32 blur-3xl" />
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-emerald-400/20 rounded-full -ml-32 -mb-32 blur-3xl" />
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-brand-light/20 rounded-full -ml-32 -mb-32 blur-3xl" />
         
         <div className="max-w-7xl mx-auto px-6 text-center relative z-10">
           <h2 className="text-4xl md:text-5xl font-bold mb-8">Ready to partner with us?</h2>
-          <p className="text-emerald-50 text-xl mb-12 max-w-2xl mx-auto">
+          <p className="text-brand-light text-xl mb-12 max-w-2xl mx-auto">
             Join our mission to create a healthier, more connected world. We are always looking for innovative partners and talented individuals.
           </p>
           <div className="flex flex-wrap justify-center gap-4">
-            <button className="bg-white text-emerald-700 px-10 py-4 rounded-full font-bold hover:bg-emerald-50 transition-all">
+            <button className="bg-white text-brand px-10 py-4 rounded-full font-bold hover:bg-brand-light hover:text-white transition-all">
               Contact Our Team
             </button>
-            <button className="bg-emerald-700 text-white border border-emerald-500 px-10 py-4 rounded-full font-bold hover:bg-emerald-800 transition-all">
+            <button className="bg-brand-dark text-white border border-brand-light/30 px-10 py-4 rounded-full font-bold hover:bg-brand transition-all">
               View Opportunities
             </button>
           </div>
