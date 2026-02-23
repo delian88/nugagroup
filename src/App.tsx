@@ -107,7 +107,7 @@ const Navbar = () => {
               {item}
             </a>
           ))}
-          <a href="#contact" className="bg-zinc-900 text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-zinc-800 transition-all">
+          <a href="#contact" className="bg-brand text-white px-5 py-2.5 rounded-full text-sm font-medium hover:bg-brand-dark transition-all shadow-lg shadow-brand/10">
             Get in Touch
           </a>
         </div>
@@ -142,7 +142,7 @@ const Navbar = () => {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 onClick={() => setIsOpen(false)}
-                className="bg-zinc-900 text-white px-10 py-4 rounded-full font-bold mt-4"
+                className="bg-brand text-white px-10 py-4 rounded-full font-bold mt-4 shadow-lg shadow-brand/10"
               >
                 Get in Touch
               </motion.button>
@@ -155,19 +155,49 @@ const Navbar = () => {
 };
 
 const Hero = () => {
-  const [currentImage, setCurrentImage] = useState(0);
-  const images = [
-    "https://picsum.photos/seed/healthcare-medical/1920/1080",
-    "https://picsum.photos/seed/wellness-massage/1920/1080",
-    "https://picsum.photos/seed/digital-finance/1920/1080",
-    "https://picsum.photos/seed/modern-architecture/1920/1080",
-    "https://picsum.photos/seed/physical-therapy/1920/1080"
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [
+    {
+      url: "https://picsum.photos/seed/hospital-modern/1920/1080",
+      title: "Innovating for a",
+      highlight: "Better Tomorrow.",
+      description: "Nuga Group is a diversified conglomerate dedicated to improving lives through healthcare, financial technology, and global wellness solutions.",
+      tag: "Established Excellence"
+    },
+    {
+      url: "https://picsum.photos/seed/wellness-spa/1920/1080",
+      title: "World-Class",
+      highlight: "Wellness Solutions.",
+      description: "Experience the future of health with our advanced thermal massage beds and holistic wellness products designed for your well-being.",
+      tag: "Global Wellness"
+    },
+    {
+      url: "https://picsum.photos/seed/fintech-digital/1920/1080",
+      title: "Seamless Digital",
+      highlight: "Financial Future.",
+      description: "Empowering businesses and individuals with innovative fintech solutions for secure and efficient digital payments.",
+      tag: "Fintech Innovation"
+    },
+    {
+      url: "https://picsum.photos/seed/realestate-luxury/1920/1080",
+      title: "Building Sustainable",
+      highlight: "Living Spaces.",
+      description: "Redefining real estate with premium developments that combine luxury, functionality, and environmental consciousness.",
+      tag: "Real Estate Excellence"
+    },
+    {
+      url: "https://picsum.photos/seed/rehab-therapy/1920/1080",
+      title: "Holistic Path to",
+      highlight: "Full Recovery.",
+      description: "Specialized rehabilitation and physiotherapy services dedicated to restoring health and mobility through expert care.",
+      tag: "Specialized Care"
+    }
   ];
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentImage((prev) => (prev + 1) % images.length);
-    }, 5000);
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
+    }, 6000);
     return () => clearInterval(timer);
   }, []);
 
@@ -177,16 +207,16 @@ const Hero = () => {
       <div className="absolute inset-0 z-0">
         <AnimatePresence mode="wait">
           <motion.div
-            key={currentImage}
-            initial={{ opacity: 0, scale: 1.05 }}
+            key={currentSlide}
+            initial={{ opacity: 0, scale: 1.1 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 1.5 }}
+            transition={{ duration: 1.5, ease: "easeOut" }}
             className="absolute inset-0"
           >
-            <div className="absolute inset-0 bg-black/50 z-10" />
+            <div className="absolute inset-0 bg-black/60 z-10" />
             <img 
-              src={images[currentImage]} 
+              src={slides[currentSlide].url} 
               className="w-full h-full object-cover" 
               alt="Background" 
               referrerPolicy="no-referrer"
@@ -196,41 +226,45 @@ const Hero = () => {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-20 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="max-w-3xl"
-        >
-          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/20 backdrop-blur-md text-brand-light text-xs font-bold uppercase tracking-wider mb-6 border border-brand/30">
-            <ShieldCheck size={14} />
-            Established Excellence
-          </div>
-          <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
-            Innovating for a <br />
-            <span className="text-brand-light">Better Tomorrow.</span>
-          </h1>
-          <p className="text-lg md:text-xl text-zinc-200 mb-8 leading-relaxed max-w-xl">
-            Nuga Group is a diversified conglomerate dedicated to improving lives through healthcare, financial technology, real estate, and global wellness solutions.
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <a href="#subsidiaries" className="bg-brand text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-brand-dark transition-all shadow-lg shadow-brand/20">
-              Explore Our Group <ArrowRight size={18} />
-            </a>
-            <a href="#about" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
-              Learn More
-            </a>
-          </div>
-        </motion.div>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentSlide}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.8 }}
+            className="max-w-3xl"
+          >
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand/20 backdrop-blur-md text-brand-light text-xs font-bold uppercase tracking-wider mb-6 border border-brand/30">
+              <ShieldCheck size={14} />
+              {slides[currentSlide].tag}
+            </div>
+            <h1 className="text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6 tracking-tight">
+              {slides[currentSlide].title} <br />
+              <span className="text-brand-light">{slides[currentSlide].highlight}</span>
+            </h1>
+            <p className="text-lg md:text-xl text-zinc-200 mb-8 leading-relaxed max-w-xl">
+              {slides[currentSlide].description}
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <a href="#subsidiaries" className="bg-brand text-white px-8 py-4 rounded-full font-bold flex items-center gap-2 hover:bg-brand-dark transition-all shadow-lg shadow-brand/20">
+                Explore Our Group <ArrowRight size={18} />
+              </a>
+              <a href="#about" className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-8 py-4 rounded-full font-bold hover:bg-white/20 transition-all">
+                Learn More
+              </a>
+            </div>
+          </motion.div>
+        </AnimatePresence>
       </div>
 
       {/* Slider Indicators */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-30 flex gap-3">
-        {images.map((_, i) => (
+        {slides.map((_, i) => (
           <button 
             key={i}
-            onClick={() => setCurrentImage(i)}
-            className={`h-1.5 rounded-full transition-all duration-500 ${currentImage === i ? 'w-8 bg-brand' : 'w-2 bg-white/30'}`}
+            onClick={() => setCurrentSlide(i)}
+            className={`h-1.5 rounded-full transition-all duration-500 ${currentSlide === i ? 'w-8 bg-brand' : 'w-2 bg-white/30'}`}
           />
         ))}
       </div>
@@ -251,7 +285,7 @@ const SubsidiaryCard = ({ sub, index }: { sub: typeof subsidiaries[0], index: nu
         <sub.icon size={28} />
       </div>
       <div className="text-xs font-bold text-zinc-400 uppercase tracking-widest mb-2">{sub.category}</div>
-      <h3 className="text-2xl font-bold text-zinc-900 mb-4 group-hover:text-zinc-700 transition-colors">
+      <h3 className="text-2xl font-bold text-zinc-900 mb-4 group-hover:text-brand transition-colors">
         {sub.name}
       </h3>
       <p className="text-zinc-500 leading-relaxed mb-8 flex-grow">
