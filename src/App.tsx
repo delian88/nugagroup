@@ -306,8 +306,8 @@ const SubsidiaryCard = ({ sub, index }: { sub: typeof subsidiaries[0], index: nu
 const Stats = () => {
   const stats = [
     { label: "Years of Excellence", value: "20+" },
-    { label: "Global Locations", value: "50+" },
-    { label: "Team Members", value: "500+" },
+    { label: "Global Locations", value: "10+" },
+    { label: "Team Members", value: "10+" },
     { label: "Subsidiaries", value: "6" }
   ];
 
@@ -519,7 +519,7 @@ const GlobalPresence = () => {
             ))}
           </div>
           <div className="mt-16 text-center relative z-10">
-            <p className="text-zinc-400 mb-8">Operating in over 50+ locations worldwide with a unified mission.</p>
+            <p className="text-zinc-400 mb-8">Operating in over 10+ locations worldwide with a unified mission.</p>
             <button className="bg-white text-zinc-900 px-8 py-4 rounded-full font-bold hover:bg-zinc-100 transition-all">
               View All Locations
             </button>
