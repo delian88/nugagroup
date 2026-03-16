@@ -607,7 +607,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <h4 className="font-bold text-zinc-900 mb-1">Our Headquarters</h4>
-                  <p className="text-zinc-500">123 Business Avenue, Victoria Island, Lagos, Nigeria</p>
+                  <p className="text-zinc-500">Plot 1987, Umaru Musa Yaradua expressway, Opp. Police signboard Lugbe.</p>
                 </div>
               </div>
               <div className="flex gap-6">
@@ -617,7 +617,8 @@ const Contact = () => {
                 <div>
                   <h4 className="font-bold text-zinc-900 mb-1">Global Support</h4>
                   <p className="text-zinc-500">support@nugagroup.com</p>
-                  <p className="text-zinc-500">+234 (0) 123 456 789</p>
+                  <p className="text-zinc-500">+234 707 111 1391</p>
+                  <p className="text-zinc-500">+234 815 555 1225</p>
                 </div>
               </div>
             </div>
