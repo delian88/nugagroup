@@ -3,9 +3,9 @@
 
 @theme {
   --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-  --color-brand: #B0197E;
-  --color-brand-light: #D42B9D;
-  --color-brand-dark: #8A1362;
+  --color-brand: #2563eb;
+  --color-brand-light: #60a5fa;
+  --color-brand-dark: #1e40af;
 }
 
 @layer base {

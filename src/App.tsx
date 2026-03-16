@@ -95,9 +95,9 @@ const Navbar = () => {
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${scrolled ? 'bg-white/80 backdrop-blur-md border-b border-zinc-200 py-3' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center gap-2">
-          <img src="/logo.svg" alt="Nuga Group Logo" className="w-10 h-10 object-contain" />
-          <span className={`font-bold text-xl tracking-tight ${scrolled ? 'text-zinc-900' : 'text-zinc-900'}`}>
-            NUGA GROUP
+          <img src="/logo.svg" alt="Nugabest Group Logo" className="w-10 h-10 object-contain" />
+          <span className={`font-bold text-xl tracking-tight ${scrolled ? 'text-brand' : 'text-brand'}`}>
+            NUGABEST GROUP
           </span>
         </div>
 
@@ -161,7 +161,7 @@ const Hero = () => {
       url: "https://picsum.photos/seed/hospital-modern/1920/1080",
       title: "Innovating for a",
       highlight: "Better Tomorrow.",
-      description: "Nuga Group is a diversified conglomerate dedicated to improving lives through healthcare, financial technology, and global wellness solutions.",
+      description: "Nugabest Group is a diversified conglomerate dedicated to improving lives through healthcare, financial technology, and global wellness solutions.",
       tag: "Established Excellence"
     },
     {
@@ -351,7 +351,7 @@ const About = () => {
             </h2>
             <div className="space-y-6 text-zinc-600 leading-relaxed text-lg">
               <p>
-                Founded on the principles of integrity and service, Nuga Group has grown from a single wellness center into a global network of enterprises. Our mission is to bridge the gap between advanced technology and human well-being.
+                Founded on the principles of integrity and service, Nugabest Group has grown from a single wellness center into a global network of enterprises. Our mission is to bridge the gap between advanced technology and human well-being.
               </p>
               <p>
                 Whether it's through the life-saving services at Nuga Hospital, the financial empowerment of Nuga Pay, or the world-class wellness products of Nuga Best, we are committed to excellence in every sector we touch.
@@ -440,7 +440,7 @@ const Leadership = () => {
             <div className="absolute -bottom-6 -right-6 bg-zinc-900 text-white p-8 rounded-2xl shadow-xl max-w-xs">
               <p className="italic text-zinc-300 mb-4">"Our goal is not just to build businesses, but to build a legacy of health and prosperity for all."</p>
               <p className="font-bold">The Visionary Team</p>
-              <p className="text-xs text-zinc-500 uppercase tracking-widest">Nuga Group Leadership</p>
+              <p className="text-xs text-zinc-500 uppercase tracking-widest">Nugabest Group Leadership</p>
             </div>
           </div>
           <div>
@@ -451,7 +451,7 @@ const Leadership = () => {
             <h2 className="text-4xl font-bold text-zinc-900 mb-8 leading-tight">Visionary Minds <br /> Behind the Group.</h2>
             <div className="space-y-6 text-zinc-600 leading-relaxed">
               <p>
-                The Nuga Group is led by a team of seasoned professionals with decades of experience in healthcare, finance, and international business. Their collective vision has steered the group through periods of rapid expansion and technological shifts.
+                The Nugabest Group is led by a team of seasoned professionals with decades of experience in healthcare, finance, and international business. Their collective vision has steered the group through periods of rapid expansion and technological shifts.
               </p>
               <p>
                 We believe in leadership that empowers. Our executives are not just decision-makers; they are mentors and innovators who foster a culture of creativity and accountability across all our subsidiaries.
@@ -558,7 +558,7 @@ const News = () => {
         <div className="flex justify-between items-end mb-16">
           <div>
             <h2 className="text-4xl font-bold text-zinc-900 mb-4">Latest Insights</h2>
-            <p className="text-zinc-500">Stay updated with the latest developments across the Nuga Group.</p>
+            <p className="text-zinc-500">Stay updated with the latest developments across the Nugabest Group.</p>
           </div>
           <button className="hidden md:flex items-center gap-2 text-zinc-900 font-bold group">
             View All News <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />
@@ -680,9 +680,9 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
           <div className="col-span-1 lg:col-span-1">
             <div className="flex items-center gap-2 mb-6">
-              <img src="/logo.svg" alt="Nuga Group Logo" className="w-8 h-8 object-contain" />
-              <span className="font-bold text-lg tracking-tight text-zinc-900">
-                NUGA GROUP
+              <img src="/logo.svg" alt="Nugabest Group Logo" className="w-8 h-8 object-contain" />
+              <span className="font-bold text-lg tracking-tight text-brand">
+                NUGABEST GROUP
               </span>
             </div>
             <p className="text-zinc-500 text-sm leading-relaxed mb-6">
@@ -743,7 +743,7 @@ const Footer = () => {
 
         <div className="pt-12 border-t border-zinc-200 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-zinc-400 text-xs">
-            © {new Date().getFullYear()} Nuga Group. All rights reserved.
+            © {new Date().getFullYear()} Nugabest Group. All rights reserved.
           </p>
           <div className="flex gap-8 text-xs text-zinc-400 font-medium">
             <a href="#" className="hover:text-zinc-900">Privacy Policy</a>
